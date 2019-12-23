@@ -11,6 +11,15 @@ jobs:
     - 
       name: Checkout files
       uses: actions/checkout@v1
+    - name: Run some commands on arm64
+      id: runcmd
+      uses: uraimo/run-on-arch-action@master
+      with:
+        architecture: aarch64
+        distribution: ubuntu18.04
+        run: |
+          apt update
+          apt install -y build-essential
     - 
       name: Make release build
       run: ./release.sh binary
@@ -19,4 +28,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: quickjs-build
-        path: /tmp
+        path: /tmp/quickjs-linux-x86_64-2019-12-21.zip
