@@ -21,6 +21,7 @@ jobs:
        run: |
         export AR=arm-linux-gnueabihf-ar
         export CC=arm-linux-gnueabihf-gcc
+        export HOST_CC=$CC
         ./release.sh binary
         
     - 
