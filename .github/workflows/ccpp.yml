@@ -14,8 +14,8 @@ jobs:
     - 
       name: Install armv7 cross compiler
       run: |
-        apt update
-        apt install -y build-essential libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi libncurses5-dev gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+        sudo apt update
+        sudo apt install -y build-essential libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi libncurses5-dev gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
     -
        name: Run build
        run: |
