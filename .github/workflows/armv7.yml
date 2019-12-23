@@ -16,8 +16,8 @@ jobs:
       id: runcmd
       uses: uraimo/run-on-arch-action@master
       with:
-        architecture: aarch64
-        distribution: ubuntu18.04
+        architecture: armv7
+        distribution: buster
         run: |
           apt update
           apt install -y build-essential zip gzip tar unzip
