@@ -11,7 +11,8 @@ jobs:
     - 
       name: Checkout files
       uses: actions/checkout@v1
-    - name: Run some commands on arm64
+    - 
+      name: Run with armv7
       id: runcmd
       uses: uraimo/run-on-arch-action@master
       with:
