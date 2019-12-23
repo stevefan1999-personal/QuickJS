@@ -12,16 +12,15 @@ jobs:
       name: Checkout files
       uses: actions/checkout@v1
     - 
-      name: Run with armv7
-      id: runcmd
-      uses: uraimo/run-on-arch-action@master
-      with:
-        architecture: aarch64
-        distribution: ubuntu18.04
-        run: |
-          apt update
-          apt install -y build-essential
-          ./release.sh binary
+      name: Install armv7 cross compiler
+      run: |
+        apt update
+        apt install -y build-essential libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi libncurses5-dev gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+    -
+       name: Run build
+       run: |
+        CC=arm-linux-gnueabi-gcc ./release.sh binary
+        
     - 
       name: Upload the artifact 
       uses: actions/upload-artifact@v1
