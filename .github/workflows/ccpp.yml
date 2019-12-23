@@ -19,7 +19,9 @@ jobs:
     -
        name: Run build
        run: |
-        CC=arm-linux-gnueabi-gcc ./release.sh binary
+        export AR=arm-linux-gnueabihf-ar
+        export CC=arm-linux-gnueabihf-gcc
+        ./release.sh binary
         
     - 
       name: Upload the artifact 
