@@ -21,9 +21,7 @@ jobs:
         run: |
           apt update
           apt install -y build-essential
-    - 
-      name: Make release build
-      run: ./release.sh binary
+          ./release.sh binary
     - 
       name: Upload the artifact 
       uses: actions/upload-artifact@v1
