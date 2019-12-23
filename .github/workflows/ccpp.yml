@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v1
     - 
       name: Make release build
-      run: ./release.sh all
+      run: ./release.sh binary
     - 
       name: Upload the artifact 
       uses: actions/upload-artifact@v1
