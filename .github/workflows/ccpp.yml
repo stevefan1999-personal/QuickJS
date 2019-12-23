@@ -1,0 +1,22 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - 
+      name: Checkout files
+      uses: actions/checkout@v1
+    - 
+      name: Make release build
+      run: ./release.sh all
+    - 
+      name: Upload the artifact 
+      uses: actions/upload-artifact@v1
+      with:
+        name: quickjs-build
+        path: quickjs-*
